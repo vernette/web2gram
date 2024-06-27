@@ -4,6 +4,7 @@ from aiogram.filters import CommandStart, Command
 from aiogram.types import Message
 
 from core.constants import START_COMMAND_MESSAGE, HELP_COMMAND_MESSAGE
+from keyboards.inline.help_command_kb import build_help_command_kb
 
 router = Router(name=__name__)
 
@@ -22,5 +23,6 @@ async def handle_help_command(message: Message):
     await message.answer(
         text=HELP_COMMAND_MESSAGE.format(bot_username=bot_info.username),
         disable_web_page_preview=True,
+        reply_markup=build_help_command_kb(),
         parse_mode=ParseMode.HTML
     )
