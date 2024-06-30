@@ -1,0 +1,6 @@
+{
+    "CHOOSE_LANGUAGE_MESSAGE": "\uD83C\uDF0E Choose language:",
+    "START_COMMAND_MESSAGE": "👋 Hello, <b>{full_name}</b>!\n\n🔗 To download a file, send me a <b>direct</b> link.\n\n📖 <b>Help</b> - /help",
+    "HELP_COMMAND_MESSAGE": "@{bot_username} is a bot for downloading files via <b>direct links</b>.\n\n<b>How to use:</b>\n\n🌐 <b>1.</b> Send me a direct link to the file\n✍️ <b>2.</b> Choose a name for the file or leave the default name\n💾 <b>3.</b> Click the 'Download' button\n🚀 <b>4.</b> Wait for the file to download and be uploaded to the Telegram server\n\n💡 <i>Direct links</i> are links that immediately start <b>downloading a file</b> or <b>open</b> a video/image, etc.\n\n👉 <b>Examples of direct links:</b>\nhttps://w.wallhaven.cc/full/2y/wallhaven-2yxp16.jpg\nhttps://trashbox.ru/files20/1957124_683e4b/mark.via.gp-20240524.apk\nhttps://file-examples.com/wp-content/storage/2017/04/file_example_MP4_1920_18MG.mp4",
+    "BOT_SOURCE_CODE_BTN_TEXT": "\uD83E\uDD16 Bot source code"
+}
