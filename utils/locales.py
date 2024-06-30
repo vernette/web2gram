@@ -15,3 +15,8 @@ def load_locales():
             ) as file:
                 locales[lang] = json.load(file)
     return locales
+
+
+def get_locale_text(key: str, locale: str = 'ru'):
+    locales = load_locales()
+    return locales[locale][key]
