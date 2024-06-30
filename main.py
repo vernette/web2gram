@@ -2,6 +2,7 @@ import asyncio
 import os
 
 from aiogram import Bot, Dispatcher
+from aiogram.enums import ParseMode
 from dotenv import load_dotenv
 
 from routers import router as main_router
@@ -12,7 +13,7 @@ async def main():
     load_dotenv()
     dp = Dispatcher()
     dp.include_router(main_router)
-    bot = Bot(os.getenv('BOT_TOKEN'))
+    bot = Bot(os.getenv('BOT_TOKEN'), parse_mode=ParseMode.HTML)
     await dp.start_polling(bot)
 
 

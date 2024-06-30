@@ -1,5 +1,4 @@
 from aiogram import F, Router
-from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart, Command
 from aiogram.types import Message, CallbackQuery
 
@@ -31,8 +30,7 @@ async def handle_language_choice(callback_query: CallbackQuery):
     await callback_query.message.answer(
         get_locale_text('START_COMMAND_MESSAGE', chosen_lang).format(
             full_name=callback_query.from_user.full_name
-        ),
-        parse_mode=ParseMode.HTML,
+        )
     )
 
 
@@ -47,5 +45,4 @@ async def handle_help_command(message: Message):
         text=help_message,
         disable_web_page_preview=True,
         reply_markup=build_help_command_kb(locale=user_language),
-        parse_mode=ParseMode.HTML,
     )
