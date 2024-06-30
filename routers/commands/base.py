@@ -16,16 +16,16 @@ user_languages = dict()  # TODO Replace with DB
 
 @router.message(CommandStart())
 async def handle_start_command(message: Message):
-    user_language_code = message.from_user.language_code
-    message_text = locales[user_language_code]['CHOOSE_LANGUAGE_MESSAGE']
-    await message.answer(text=message_text, reply_markup=build_language_selector_kb())
+    await message.answer(
+        text=locales[message.from_user.language_code]['CHOOSE_LANGUAGE_MESSAGE'],
+        reply_markup=build_language_selector_kb(),
+    )
 
 
 @router.callback_query(F.data.startswith('lang_'))
 async def handle_language_choice(callback_query: CallbackQuery):
-    user_id = callback_query.from_user.id
     chosen_lang = callback_query.data.split('_')[1]
-    user_languages[user_id] = chosen_lang
+    user_languages[callback_query.from_user.id] = chosen_lang
     await callback_query.answer()
     await callback_query.message.answer(
         locales[chosen_lang]['START_COMMAND_MESSAGE'].format(
